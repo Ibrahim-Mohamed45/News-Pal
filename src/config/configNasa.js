@@ -1,1 +1,0 @@
-export const apiKeyNasa = 'mH6GIRZigeWu9agJQ4QL9uEipZfhzM0yINZxkGPc';

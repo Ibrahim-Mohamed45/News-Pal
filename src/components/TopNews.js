@@ -27,18 +27,16 @@ const TopNews = () => {
       <Row xs={2} sm={2} md={3} xl={4}>
         {/* this maps over the newly created newWithImages */}
         {newsWithImages.map((news) => (
-          <Col key={news.id}>
-            <ListGroup.Item>
-              <Card>
+          <Col className="mb-4" key={news.id}>
+              <Card className="h-100">
                 <Card.Img variant="top" src={news.fields.thumbnail} />
-                <Card.Body>
+                <Card.Body className={styles.TopNewsCardBody}>
                   <Card.Title>{news.webTitle}</Card.Title>
                   {/* replaces the T and Z that was given by guardian api on the dates with empty spaces */}
                   <Card.Text>{news.webPublicationDate.replace('T', ' ').replace('Z', '')}</Card.Text>
-                  <Card.Link href={news.webUrl}>Read more on Guardian</Card.Link>
                 </Card.Body>
+                <Card.Link className={styles.TopNewsLink} href={news.webUrl}>Read more on Guardian</Card.Link>
               </Card>
-            </ListGroup.Item>
           </Col>
         ))}
       </Row>

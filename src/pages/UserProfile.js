@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useUserAuth } from "../components/UserAuthContext";
-import { getAuth, updateProfile } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 import {
   Container,
   Row,
@@ -49,13 +49,11 @@ const UserProfile = () => {
   const handleClick = (e) => {
     if (e.target.checked && tempUserPref.includes(e.target.name) === false) {
       tempUserPref.push(e.target.name);
-      console.log(tempUserPref);
     } else if (
       e.target.checked === false &&
       tempUserPref.includes(e.target.name) === true
     ) {
       removeItem(tempUserPref, e.target.name);
-      console.log(tempUserPref);
     }
   };
 
@@ -88,7 +86,6 @@ const UserProfile = () => {
 
     if (tempUserPref.length > 0) {
       userPref = tempUserPref;
-      console.log(userPref);
     }
 
     setFirstName("");

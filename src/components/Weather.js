@@ -17,7 +17,6 @@ function Weather() {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/weather/?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`);
         const result = await response.json();
         setData(result);
-        console.log(result);
       });
     }
     fetchData();

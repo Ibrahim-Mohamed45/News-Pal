@@ -85,24 +85,21 @@ function UserNewsFeed() {
       </div>
       <div className={styles.UserNewsContainer}>
         <h2 className={styles.articlesHeader}>{articles.length > 0 && articles[0].sectionName}</h2>
-        <ListGroup>
           <Row xs={2} sm={2} md={3} xl={4}>
             {articles.map((article) => (
-              <Col key={article.id}>
-                <ListGroup.Item>
-                  <Card>
+              <Col className="mb-4" key={article.id}>
+                  <Card className="h-100">
                     <Card.Img variant="top" src={article.fields.thumbnail} />
-                    <Card.Body>
+                    <Card.Body className={styles.NewsPrefCardBody}>
                       <Card.Title>{article.webTitle}</Card.Title>
+                      {/* replaces the T and Z that was given by guardian api on the dates with empty spaces */}
                       <Card.Text>{article.webPublicationDate.replace('T', ' ').replace('Z', '')}</Card.Text>
-                      <Card.Link href={article.webUrl}>Read more on Guardian</Card.Link>
                     </Card.Body>
+                    <Card.Link className={styles.NewsPrefLink} href={article.webUrl}>Read more on Guardian</Card.Link>
                   </Card>
-                </ListGroup.Item>
               </Col>
             ))}
           </Row>
-        </ListGroup>
       </div>
       <Footer />
     </>
