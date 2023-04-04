@@ -49,7 +49,7 @@ npm start
 
 ## Live Website
 
-The live website can be found here: <a href="https://newspal.netlify.app/" target="_blank"> News Pal</a>
+The live website can be found here: <a href="https://news-pal-45.web.app/" target="_blank"> News Pal</a>
 
 ### The live website looks like this:
 <br/>
